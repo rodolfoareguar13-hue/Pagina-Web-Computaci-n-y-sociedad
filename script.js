@@ -1,4 +1,4 @@
-// Mobile Navigation Toggle
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for navigation links
+    
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
+                const offsetTop = targetSection.offsetTop - 80; 
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Active navigation highlighting
+   
     const sections = document.querySelectorAll('.section');
     const navItems = document.querySelectorAll('.nav-menu a');
 
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate elements on scroll
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observe all cards and data items
+  
     const cards = document.querySelectorAll('.card, .data-item, .content-card');
     cards.forEach(card => {
         card.style.opacity = '0';
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Chart animation
+
     const chartBars = document.querySelectorAll('.chart-bar');
     chartBars.forEach(bar => {
         const width = bar.style.width;
@@ -91,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 500);
     });
 
-    // Data number animation
+   
     const dataNumbers = document.querySelectorAll('.data-number');
     dataNumbers.forEach(number => {
         const finalValue = number.textContent;
@@ -111,7 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Table row hover effects
     const tableRows = document.querySelectorAll('.data-table tbody tr');
     tableRows.forEach(row => {
         row.addEventListener('mouseenter', function() {
@@ -125,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add loading animation
+  
     window.addEventListener('load', function() {
         document.body.style.opacity = '0';
         document.body.style.transition = 'opacity 0.5s ease';
@@ -134,8 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.opacity = '1';
         }, 100);
     });
-
-    // Back to top button
+   
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopBtn.className = 'back-to-top';
@@ -159,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.body.appendChild(backToTopBtn);
 
-    // Show/hide back to top button
+   
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             backToTopBtn.style.opacity = '1';
@@ -170,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Back to top functionality
+    
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -178,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hover effect to back to top button
+    
     backToTopBtn.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.1)';
         this.style.background = '#2a5298';
@@ -189,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.background = '#1e3c72';
     });
 
-    // Print functionality
+   
     const printBtn = document.createElement('button');
     printBtn.innerHTML = '<i class="fas fa-print"></i> Imprimir';
     printBtn.className = 'print-btn';
@@ -226,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.background = '#28a745';
     });
 
-    // Add CSS for print styles
+ 
     const printStyles = document.createElement('style');
     printStyles.textContent = `
         @media print {
@@ -270,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(printStyles);
 });
 
-// Add active class to navigation items
+
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-menu a');
     
@@ -282,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add CSS for active navigation state
+
 const activeNavStyles = document.createElement('style');
 activeNavStyles.textContent = `
     .nav-menu a.active {
@@ -291,3 +288,4 @@ activeNavStyles.textContent = `
     }
 `;
 document.head.appendChild(activeNavStyles);
+
